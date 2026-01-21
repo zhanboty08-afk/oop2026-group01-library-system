@@ -16,7 +16,7 @@ public class UserService {
     }
 
     public User getUser(long id) {
-        return users.findById(id).orElseThrow(() -> new NotFoundException("User not found: " + id));
+        return users.findById(id).orElseThrow(() -> new NotFoundException("user not found: " + id));
     }
 
     public List<User> listUsers() {

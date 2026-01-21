@@ -48,7 +48,7 @@ public class ConsoleUI {
                     case "5" -> addComment(sc);
                     case "6" -> listTasks(sc);
                     case "0" -> { return; }
-                    default -> System.out.println("Unknown command");
+                    default -> System.out.println("unknown command");
                 }
             } catch (NotFoundException | DeadlineInPastException | TaskWithoutProjectException e) {
                 System.out.println("ERROR: " + e.getMessage());

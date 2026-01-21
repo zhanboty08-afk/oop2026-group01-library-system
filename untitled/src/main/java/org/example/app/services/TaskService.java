@@ -19,7 +19,7 @@ public class TaskService {
 
     public long addTask(Long projectId, String title, String description, LocalDate deadline) {
         if (projectId == null) throw new TaskWithoutProjectException("Task must belong to a project");
-        projectService.getProject(projectId); // проверка что проект существует
+        projectService.getProject(projectId);
 
         if (deadline != null && deadline.isBefore(LocalDate.now())) {
             throw new DeadlineInPastException("Deadline is in the past: " + deadline);
