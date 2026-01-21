@@ -20,7 +20,7 @@ public class CommentService {
     public long addComment(long taskId, long authorId, String text) {
         taskService.getTask(taskId);
         userService.getUser(authorId);
-        if (text == null || text.isBlank()) throw new IllegalArgumentException("Comment text is empty");
+        if (text == null || text.isBlank()) throw new IllegalArgumentException("Commentt text is empty");
         return comments.save(new Comment(taskId, authorId, text));
     }
 
