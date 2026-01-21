@@ -21,7 +21,7 @@ public class ProjectService {
     }
 
     public Project getProject(long id) {
-        return projects.findById(id).orElseThrow(() -> new NotFoundException("Project not found: " + id));
+        return projects.findById(id).orElseThrow(() -> new NotFoundException("project not found: " + id));
     }
 
     public List<Project> listProjectsByOwner(long ownerId) {
