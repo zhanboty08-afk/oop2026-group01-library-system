@@ -29,7 +29,8 @@ public class JdbcCommentRepository implements CommentRepository {
     }
 
     public List<Comment> findAllByTask(long taskId) {
-        String sql = "select id, task_id, author_id, text from comments where task_id = ? order by id";
+        String sql = "select id, task_id, author_id, text from comments where task_id  = ? order by id";
+
         List<Comment> list = new ArrayList<>();
         try (Connection c = db.getConnection();
              PreparedStatement ps = c.prepareStatement(sql)) {

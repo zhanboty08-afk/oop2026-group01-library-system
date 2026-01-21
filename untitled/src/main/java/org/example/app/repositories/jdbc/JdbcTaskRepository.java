@@ -31,7 +31,8 @@ public class JdbcTaskRepository implements TaskRepository {
             rs.next();
             return rs.getLong("id");
         } catch (SQLException e) {
-            throw new RuntimeException("DB error save task: " + e.getMessage(), e);
+            throw new RuntimeException("DB  error save task: " + e.getMessage(), e);
+
         }
     }
 
