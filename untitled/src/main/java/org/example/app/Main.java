@@ -1,5 +1,4 @@
 package org.example.app;
-
 import org.example.app.db.IDatabase;
 import org.example.app.db.PostgresDatabase;
 import org.example.app.repositories.*;
