@@ -13,7 +13,6 @@ public class JdbcCommentRepository implements CommentRepository {
 
     public JdbcCommentRepository(IDatabase db) { this.db = db; }
 
-    @Override
     public long save(Comment comment) {
         String sql = "insert into comments(task_id, author_id, text) values (?, ?, ?) returning id";
         try (Connection c = db.getConnection();
@@ -29,7 +28,6 @@ public class JdbcCommentRepository implements CommentRepository {
         }
     }
 
-    @Override
     public List<Comment> findAllByTask(long taskId) {
         String sql = "select id, task_id, author_id, text from comments where task_id = ? order by id";
         List<Comment> list = new ArrayList<>();
