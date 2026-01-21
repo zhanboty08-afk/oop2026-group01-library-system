@@ -25,7 +25,8 @@ public class JdbcProjectRepository implements ProjectRepository {
             rs.next();
             return rs.getLong("id");
         } catch (SQLException e) {
-            throw new RuntimeException("DB error save project: " + e.getMessage(), e);
+            throw new RuntimeException("DB error  save project: " + e.getMessage(), e);
+
         }
     }
 

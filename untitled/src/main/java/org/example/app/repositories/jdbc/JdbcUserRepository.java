@@ -31,7 +31,8 @@ public class JdbcUserRepository implements UserRepository {
 
     @Override
     public Optional<User> findById(long id) {
-        String sql = "select id, name, email from users where id = ?";
+        String sql = "select id,  name, email from users where id = ?";
+
         try (Connection c = db.getConnection();
              PreparedStatement ps = c.prepareStatement(sql)) {
             ps.setLong(1, id);
