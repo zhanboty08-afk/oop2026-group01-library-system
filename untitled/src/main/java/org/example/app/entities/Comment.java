@@ -12,10 +12,6 @@ public class Comment {
         this.id = id; this.taskId = taskId; this.authorId = authorId; this.text = text;
     }
 
-    public Comment(Long taskId, Long authorId, String text) {
-        this.taskId = taskId; this.authorId = authorId; this.text = text;
-    }
-
     public Long getId() { return id; }
     public Long getTaskId() { return taskId; }
     public Long getAuthorId() { return authorId; }
