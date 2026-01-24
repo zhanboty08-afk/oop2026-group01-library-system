@@ -12,10 +12,6 @@ public class Project {
         this.id = id; this.ownerId = ownerId; this.title = title; this.description = description;
     }
 
-    public Project(Long ownerId, String title, String description) {
-        this.ownerId = ownerId; this.title = title; this.description = description;
-    }
-
     public Long getId() { return id; }
     public Long getOwnerId() { return ownerId; }
     public String getTitle() { return title; }
@@ -26,4 +22,3 @@ public class Project {
     public void setTitle(String title) { this.title = title; }
     public void setDescription(String description) { this.description = description; }
 }
-
