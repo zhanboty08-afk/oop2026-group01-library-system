@@ -16,12 +16,6 @@ public class Task {
         this.id = id; this.projectId = projectId; this.title = title; this.description = description;
         this.status = status; this.deadline = deadline;
     }
-
-    public Task(Long projectId, String title, String description, TaskStatus status, LocalDate deadline) {
-        this.projectId = projectId; this.title = title; this.description = description;
-        this.status = status; this.deadline = deadline;
-    }
-
     public Long getId() { return id; }
     public Long getProjectId() { return projectId; }
     public String getTitle() { return title; }
