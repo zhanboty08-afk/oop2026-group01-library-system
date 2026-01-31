@@ -17,7 +17,6 @@ public final class SettingsManager {
         properties.setProperty(key, value);
     }
 
-
     public String get(String key) {
         return properties.getProperty(key);
     }
