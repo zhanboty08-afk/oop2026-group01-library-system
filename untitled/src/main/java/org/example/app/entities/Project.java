@@ -6,7 +6,7 @@ public class Project {
     private String title;
     private String description;
 
-    public Project() {}
+    public Project(long ownerId, String title, String description) {}
 
     public Project(Long id, Long ownerId, String title, String description) {
         this.id = id; this.ownerId = ownerId; this.title = title; this.description = description;

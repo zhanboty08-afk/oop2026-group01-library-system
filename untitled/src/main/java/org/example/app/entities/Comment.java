@@ -6,7 +6,7 @@ public class Comment {
     private Long authorId;
     private String text;
 
-    public Comment() {}
+    public Comment(long taskId, long authorId, String text) {}
 
     public Comment(Long id, Long taskId, Long authorId, String text) {
         this.id = id; this.taskId = taskId; this.authorId = authorId; this.text = text;
