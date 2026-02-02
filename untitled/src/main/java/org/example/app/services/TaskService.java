@@ -53,5 +53,9 @@ public class TaskService {
 
         tasks.updateStatus(taskId, newStatus.name());
     }
-}
 
+    public List<Task> listTasksByStatus(long projectId, TaskStatus status) {
+
+        return List.of();
+    }
+}

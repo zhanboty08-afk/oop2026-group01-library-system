@@ -35,6 +35,7 @@ public class ConsoleUI {
                 4) Change task status
                 5) Add comment to task
                 6) List tasks of project
+                7) List tasks by status
                 0) Exit
                 """);
 
@@ -47,6 +48,7 @@ public class ConsoleUI {
                     case "4" -> changeStatus(sc);
                     case "5" -> addComment(sc);
                     case "6" -> listTasks(sc);
+                    case "7" -> listTasksByStatus(sc);
                     case "0" -> { return; }
                     default -> System.out.println("unknown command");
                 }
@@ -62,12 +64,15 @@ public class ConsoleUI {
 
     private void createUser(Scanner sc) {
         System.out.print("Name: ");
-        String name = sc.nextLine();
+        String name = sc.nextLine().trim();
+
         System.out.print("Email: ");
-        String email = sc.nextLine();
+        String email = sc.nextLine().trim();
+
         long id = userService.createUser(name, email);
         System.out.println("Created user id=" + id);
     }
+
 
     private void createProject(Scanner sc) {
         System.out.print("Owner userId: ");
@@ -125,6 +130,29 @@ public class ConsoleUI {
         }
         for (Task t : list) {
             System.out.println("#" + t.getId() + " [" + t.getStatus() + "] " + t.getTitle() + " deadline=" + t.getDeadline());
+        }
+    }
+    private void listTasksByStatus(Scanner sc) {
+        System.out.print("ProjectId: ");
+        long projectId = Long.parseLong(sc.nextLine());
+
+        System.out.print("Status (TODO / IN_PROGRESS / DONE): ");
+        TaskStatus status = TaskStatus.valueOf(sc.nextLine().trim());
+
+        List<Task> list = taskService.listTasksByStatus(projectId, status);
+
+        if (list.isEmpty()) {
+            System.out.println("No tasks with status " + status);
+            return;
+        }
+
+        for (Task t : list) {
+            System.out.println(
+                    "#" + t.getId() +
+                            " [" + t.getStatus() + "] " +
+                            t.getTitle() +
+                            " deadline=" + t.getDeadline()
+            );
         }
     }
 }

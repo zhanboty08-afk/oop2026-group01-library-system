@@ -10,16 +10,21 @@ public class Task {
     private TaskStatus status;
     private LocalDate deadline;
 
-    public Task() {}
+    private TaskType type = TaskType.GENERAL;
 
-    public Task(Long id, Long projectId, String title, String description, TaskStatus status, LocalDate deadline) {
-        this.id = id; this.projectId = projectId; this.title = title; this.description = description;
-        this.status = status; this.deadline = deadline;
-    }
+    public Task(long id, long projectId, String title, String description, TaskStatus status, LocalDate deadline) {}
 
     public Task(Long projectId, String title, String description, TaskStatus status, LocalDate deadline) {
-        this.projectId = projectId; this.title = title; this.description = description;
-        this.status = status; this.deadline = deadline;
+        this.projectId = projectId;
+        this.title = title;
+        this.description = description;
+        this.status = status;
+        this.deadline = deadline;
+    }
+
+    public Task(Long projectId, String title, String description, TaskStatus status, LocalDate deadline, TaskType type) {
+        this(projectId, title, description, status, deadline);
+        this.type = (type == null) ? TaskType.GENERAL : type;
     }
 
     public Long getId() { return id; }
@@ -28,6 +33,7 @@ public class Task {
     public String getDescription() { return description; }
     public TaskStatus getStatus() { return status; }
     public LocalDate getDeadline() { return deadline; }
+    public TaskType getType() { return type; }
 
     public void setId(Long id) { this.id = id; }
     public void setProjectId(Long projectId) { this.projectId = projectId; }
@@ -35,5 +41,7 @@ public class Task {
     public void setDescription(String description) { this.description = description; }
     public void setStatus(TaskStatus status) { this.status = status; }
     public void setDeadline(LocalDate deadline) { this.deadline = deadline; }
+    public void setType(TaskType type) { this.type = (type == null) ? TaskType.GENERAL : type; }
 }
+
 

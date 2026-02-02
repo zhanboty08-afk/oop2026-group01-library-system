@@ -16,7 +16,7 @@ public class ProjectService {
     }
 
     public long createProject(long ownerId, String title, String description) {
-        userService.getUser(ownerId); // если юзера нет -> NotFound
+        userService.getUser(ownerId);
         return projects.save(new Project(ownerId, title, description));
     }
 
