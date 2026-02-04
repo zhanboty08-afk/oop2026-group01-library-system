@@ -19,5 +19,6 @@ public final class TaskFactory {
             default -> new Task(projectId, title, description, status, deadline, TaskType.GENERAL);
         };
     }
+
 }
 
