@@ -2,7 +2,6 @@ package org.example.app.entities.tasks;
 
 import org.example.app.entities.TaskStatus;
 import org.example.app.entities.TaskType;
-
 import java.time.LocalDate;
 
 public abstract class BaseTask {
