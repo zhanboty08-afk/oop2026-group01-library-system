@@ -32,3 +32,4 @@ public abstract class BaseTask {
     public void setStatus(TaskStatus status) { this.status = status; }
 }
 
+
